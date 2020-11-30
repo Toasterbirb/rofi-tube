@@ -17,12 +17,13 @@ echo "$results"
 video_name=$(echo -e "$(echo "$results" | cut -d';' -f2)" | rofi -dmenu -l 10 -width 1280 -P "Results")
 echo "Video name: $video_name"
 
-# Keskeytä, jos videota ei valittu
-[ -z $video_name ] && exit 0
-
 # Search for the link in results
 notify-send -u low -t 4000 "Invidious" "Opening video:
 $video_name"
+
+echo "Removing illegal characters"
+video_name=$(echo "$video_name" | sed 's/\[//g; s/\]//g')
+results=$(echo "$results" | sed 's/\[//g; s/\]//g')
 
 echo "Looking for the correct line"
 urlLine=$(echo "$results" | grep ";$video_name$")
