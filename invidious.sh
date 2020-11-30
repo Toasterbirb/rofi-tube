@@ -1,4 +1,4 @@
-query=$(rofi -dmenu -P "Invidious | Haku" -l 0 -width 500 | sed 's/+/%2B/g; s/ /+/g')
+query=$(rofi -dmenu -P "Invidious | Search" -l 0 -width 500 | sed 's/+/%2B/g; s/ /+/g')
 
 # Keskeytä, jos haku on tyhjä
 [ -z $query ] && exit 0
