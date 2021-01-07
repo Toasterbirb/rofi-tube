@@ -11,5 +11,8 @@ Simple bash script for searching YouTube videos from Invidious and open them wit
 - coreutils
 - youtube-dl
 
+## Installation
+Clone this repo and move the `invidious.sh` script somewhere in your PATH or add a keybinding to your window manager to run the script.
+
 ## Usage
 Run invidious.sh without any arguments.
